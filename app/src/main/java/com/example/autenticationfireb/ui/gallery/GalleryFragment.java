@@ -50,7 +50,7 @@ public class GalleryFragment extends  Fragment {
                 // La posición donde se hace clic en el elemento de lista se obtiene de la
                 // la posición de parámetro de la vista de lista de Android
                 ItemFavorito.itemFav item = (ItemFavorito .itemFav) parent.getItemAtPosition(position);
-                Intent intent = new Intent(getActivity().getBaseContext(), HomeFragment.class);
+                Intent intent = new Intent(getActivity().getBaseContext(), MenuDrawerActivity.class);
                 intent.putExtra("id", item.getId());
                 startActivity(intent);
 
