@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AutenticationFireB">
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MenuDrawerActivity"
+            android:label="@string/title_activity_menu_drawer"
+            android:theme="@style/Theme.AutenticationFireB.NoActionBar"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Registro">
             <intent-filter>

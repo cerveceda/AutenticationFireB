@@ -23,6 +23,7 @@ public class Registro extends AppCompatActivity {
     Button Registro;
     TextView loginBtn;
     FirebaseAuth fauth;
+
     ProgressBar progressBar;
 
     @Override
