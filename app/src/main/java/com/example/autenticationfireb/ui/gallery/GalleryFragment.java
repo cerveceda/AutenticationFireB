@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.autenticationfireb.Adaptadores.AdapterFavorito;
 import com.example.autenticationfireb.Adaptadores.ItemFavorito;
+import com.example.autenticationfireb.MenuDrawerActivity;
 import com.example.autenticationfireb.R;
 import com.example.autenticationfireb.ui.home.HomeFragment;
 
@@ -51,6 +52,8 @@ public class GalleryFragment extends  Fragment {
                 // la posición de parámetro de la vista de lista de Android
                 ItemFavorito.itemFav item = (ItemFavorito .itemFav) parent.getItemAtPosition(position);
                 Intent intent = new Intent(getActivity().getBaseContext(), MenuDrawerActivity.class);
+
+
                 intent.putExtra("id", item.getId());
                 startActivity(intent);
 
