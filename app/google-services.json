@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "965363224214",
+    "project_id": "autenticationfireb-f5deb",
+    "storage_bucket": "autenticationfireb-f5deb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965363224214:android:3e1b63eb68d78112dffcb7",
+        "android_client_info": {
+          "package_name": "com.example.autenticationfireb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965363224214-nsgaidonrl0msgpticbv3najgdmsko9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjZrzxjy4yoIMTVpx8HButZVNH1D47ZT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965363224214-nsgaidonrl0msgpticbv3najgdmsko9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
