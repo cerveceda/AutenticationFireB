@@ -22,4 +22,10 @@
         android:name="com.example.autenticationfireb.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.autenticationfireb.MapsFragment"
+        android:label="Ubicacion"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
