@@ -1,10 +1,19 @@
 package com.example.autenticationfireb.ui.slideshow;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,24 +21,79 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+
+import com.example.autenticationfireb.Adaptadores.AdapterGrabacion;
+
+import com.example.autenticationfireb.Adaptadores.ItemGrabacion;
+import com.example.autenticationfireb.MenuDrawerActivity;
 import com.example.autenticationfireb.R;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class SlideshowFragment extends Fragment {
 
     private SlideshowViewModel slideshowViewModel;
-
+    AdapterGrabacion adapter;
+    ListView lista;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
                 new ViewModelProvider(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        lista = root.findViewById(R.id.listEquipos);
+
+        adapter = new AdapterGrabacion(getContext(),getDatos()) {
+        };
+        lista.setAdapter(adapter);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // La posición donde se hace clic en el elemento de lista se obtiene de la
+                // la posición de parámetro de la vista de lista de Android
+                ItemGrabacion.itemGab item = (ItemGrabacion.itemGab) parent.getItemAtPosition(position);
+                Intent intent = new Intent(getActivity().getBaseContext(), MenuDrawerActivity.class);
+                intent.putExtra("id", item.getId());
+               
+
+            }
+        });
+        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), "click Largo " + i, Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
         return root;
+    }
+    //metodo para retornar o recibir metodos
+
+    private ArrayList<ItemGrabacion.itemGab> getDatos() {
+        return ItemGrabacion.ArregloLista();
+    }
+
+    // evento se repite n veces , se usa varias vecxes
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menubuscardestino, menu);
+        MenuItem item = menu.findItem(R.id.menuSearch);
+        SearchView searchView = (SearchView) item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu,inflater);
     }
 }

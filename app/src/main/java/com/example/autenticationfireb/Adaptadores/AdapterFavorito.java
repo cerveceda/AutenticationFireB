@@ -85,7 +85,8 @@ public class AdapterFavorito extends BaseAdapter implements Filterable {
                                 filtroList.get(i).getId(),
                                 filtroList.get(i).getTitulo(),
                                 filtroList.get(i).getImagen(),
-                                filtroList.get(i).getestado());
+                                filtroList.get(i).getestado(),
+                                filtroList.get(i).getLink());
 
                         filtro.add(c);
                     }

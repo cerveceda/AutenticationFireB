@@ -26,7 +26,9 @@
                 android:id="@+id/estrella"
                 android:layout_width="61dp"
                 android:layout_height="42dp"
-                app:srcCompat="@drawable/estrella" />
+                app:srcCompat="@drawable/estrella"
+                android:scaleType="fitCenter"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"

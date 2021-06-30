@@ -10,11 +10,11 @@ public class ItemFavorito {
 
     //contenido del arreglo
     static {
-        addItem(new ItemFavorito .itemFav ("1","Minnesota Rokkr", R.drawable.common_google_signin_btn_icon_dark,R.drawable.estrella));
-        addItem(new ItemFavorito .itemFav("2","Dallas Empire",R.drawable.common_google_signin_btn_icon_dark,R.drawable.estrella));
-        addItem(new ItemFavorito .itemFav("3","New York Subliners", R.drawable.common_google_signin_btn_icon_dark,R.drawable.estrella));
-        addItem(new ItemFavorito .itemFav("4","Atlanta Faze", R.drawable.common_google_signin_btn_icon_dark,R.drawable.estrella));
-        addItem(new ItemFavorito .itemFav("5","Optic Chicago", R.drawable.common_google_signin_btn_icon_dark,R.drawable.estrella));
+        addItem(new ItemFavorito .itemFav ("1","New Sensation", R.drawable.vid1,R.drawable.estrella,"https://www.youtube.com/watch?v=wbV1nfWzMg4"));
+        addItem(new ItemFavorito .itemFav("2","WADU WADU",R.drawable.vid2,R.drawable.estrella,"https://www.youtube.com/watch?v=qvgBAX4-Buo"));
+        addItem(new ItemFavorito .itemFav("3","Llamame si me necesitas", R.drawable.vid3,R.drawable.estrella,"https://www.youtube.com/watch?v=TsZsB0r7mms"));
+        addItem(new ItemFavorito .itemFav("4","Lay all your Love on Me", R.drawable.vid4,R.drawable.estrella,"https://www.youtube.com/watch?v=YgXrd7eE6ME"));
+        addItem(new ItemFavorito .itemFav("5","Bring you up", R.drawable.vid5,R.drawable.estrella,"https://www.youtube.com/watch?v=Uv_4O35xWpE"));
     }
     //metodo que contruye el arreglo , metodo principal
     static void addItem(ItemFavorito .itemFav item){
@@ -44,12 +44,13 @@ public class ItemFavorito {
         private String titulo;
         private Integer imagen;
         private Integer estado;
-
-        public itemFav(String id,String titulo,Integer imagen,Integer estado){
+        private String link;
+        public itemFav(String id,String titulo,Integer imagen,Integer estado,String link){
             this.id = id;
             this.titulo = titulo;
             this.imagen = imagen;
             this.estado = estado;
+            this.link=link;
         }
         public String getId() {
             return id;
@@ -82,5 +83,15 @@ public class ItemFavorito {
         public void setestado(Integer estado) {
             this.estado = estado;
         }
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+
     }
 }

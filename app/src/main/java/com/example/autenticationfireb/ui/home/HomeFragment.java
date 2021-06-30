@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
     private WebView webView;
     MediaRecorder miGrabacion;
     String outputFile=null;
-    String link[]={"https://www.youtube.com","","","","",""};
+    String link[]={"https://www.youtube.com","https://www.youtube.com/watch?v=wbV1nfWzMg4","https://www.youtube.com/watch?v=qvgBAX4-Buo","https://www.youtube.com/watch?v=TsZsB0r7mms","https://www.youtube.com/watch?v=YgXrd7eE6ME","https://www.youtube.com/watch?v=Uv_4O35xWpE"};
     int i=0;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +42,8 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){ ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest .permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1000);}
+        String newString;
+
         this.btnPlay = root.findViewById(R.id.btnPlay);
         this.btnStop = root.findViewById(R.id.btnStop);
         this.btnRecord = root.findViewById(R.id.btnRecord);
@@ -50,15 +52,29 @@ public class HomeFragment extends Fragment {
 
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(link[i]);
-        i=i+1;
         webView.getSettings().setJavaScriptEnabled(true);
         btnPlay.setOnClickListener(e ->reproduccir());
         btnRecord.setOnClickListener(e->grabar());
         btnStop.setOnClickListener(e->detener());
+
+
+        if (savedInstanceState == null) {
+            Bundle extras = getActivity().getIntent().getExtras();
+            if(extras == null) {
+                newString= null;
+            } else {
+                newString= extras.getString("link");
+                webView.loadUrl(newString);
+                webView.getSettings().setJavaScriptEnabled(true);
+            }
+        } else {
+            newString= (String) savedInstanceState.getSerializable("link");
+        }
         return root;
     }
     public void grabar(){
-       outputFile= Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion2.3gp";
+       outputFile= Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion"+i+".m4a";
+       i=i+1;
         miGrabacion = new MediaRecorder();
         miGrabacion.setAudioSource(MediaRecorder.AudioSource.MIC);
         miGrabacion.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);

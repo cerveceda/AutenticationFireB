@@ -10,11 +10,11 @@ public class ItemGrabacion {
 
     //contenido del arreglo
     static {
-        addItem(new ItemGrabacion.itemGab ("1","Minnesota Rokkr", R.drawable.common_google_signin_btn_icon_dark,""));
-        addItem(new ItemGrabacion.itemGab("2","Dallas Empire",R.drawable.common_google_signin_btn_icon_dark,""));
-        addItem(new ItemGrabacion.itemGab("3","New York Subliners", R.drawable.common_google_signin_btn_icon_dark,""));
-        addItem(new ItemGrabacion.itemGab("4","Atlanta Faze", R.drawable.common_google_signin_btn_icon_dark,""));
-        addItem(new ItemGrabacion.itemGab("5","Optic Chicago", R.drawable.common_google_signin_btn_icon_dark,""));
+        addItem(new ItemGrabacion.itemGab ("1","Grabacion", R.drawable.musica,"Grabacion0.m4a"));
+        addItem(new ItemGrabacion.itemGab("2","Grabacion1",R.drawable.musica,"/storage/emulated/Grabacion1.m4a"));
+        addItem(new ItemGrabacion.itemGab("3","Grabacion2", R.drawable.musica,"/storage/emulated/Grabacion2.m4a"));
+        addItem(new ItemGrabacion.itemGab("4","Grabacion3", R.drawable.musica,"/storage/emulated/Grabacion3.m4a"));
+        addItem(new ItemGrabacion.itemGab("5","Grabacion4", R.drawable.musica,"/storage/emulated/Grabacion4.m4a"));
     }
     //metodo que contruye el arreglo , metodo principal
     static void addItem(ItemGrabacion.itemGab item){
