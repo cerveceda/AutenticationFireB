@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -39,8 +40,25 @@ public class MapsFragment extends Fragment {
         public void onMapReady(GoogleMap googleMap) {
 
             LatLng sydney = new LatLng(-13.518121379124077, -71.97867329157455);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Karaoke"));
+            googleMap.addMarker(new MarkerOptions().position(sydney).title("Karaoke").
+                    icon(BitmapDescriptorFactory.fromResource(R.drawable.karaoke)));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng lisu = new LatLng(-13.517677131873125, -71.97871457534153);
+            googleMap.addMarker(new MarkerOptions().position(lisu).title("Q'Lissura karaoke").
+                    icon(BitmapDescriptorFactory.fromResource(R.drawable.karaoke)));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(lisu));
+            LatLng way = new LatLng(-13.488833678471387, -71.96950065254704);
+            googleMap.addMarker(new MarkerOptions().position(way).title("My Way Karaoke").
+                    icon(BitmapDescriptorFactory.fromResource(R.drawable.karaoke)));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(way));
+            LatLng wood = new LatLng(-13.483491981537203, -71.973333866318);
+            googleMap.addMarker(new MarkerOptions().position(wood).title("Woodstock Kraoke").
+                    icon(BitmapDescriptorFactory.fromResource(R.drawable.karaoke)));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(wood));
+            LatLng encan = new LatLng(-13.491504482145329, -71.95871085254703);
+            googleMap.addMarker(new MarkerOptions().position(encan).title("Encantos Box Karaoke").
+                    icon(BitmapDescriptorFactory.fromResource(R.drawable.karaoke)));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(encan));
             mapa = googleMap;
             googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
