@@ -7,31 +7,45 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        card_view:cardCornerRadius = "5dp"
-        card_view:cardElevation ="4dp"
+        android:layout_height="133dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="4dp"
         card_view:cardPreventCornerOverlap="false"
         card_view:cardUseCompatPadding="true">
 
-
-        <ImageView
-            android:id="@+id/imgDestino"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            card_view:srcCompat="@drawable/eas" />
+            android:layout_height="133dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/imgDestino"
+                android:layout_width="171dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="7dp"
+                android:scaleType="fitCenter"
+                card_view:srcCompat="@drawable/musica"
+
+                />
 
         <TextView
             android:id="@+id/txtTituloDestino"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_gravity="bottom"
+            android:layout_width="197dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:background="#8c111122"
             android:padding="5dp"
             android:text="TextView"
             android:textColor="#ffe3e3e3"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
