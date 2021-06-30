@@ -34,7 +34,8 @@ public class HomeFragment extends Fragment {
     private WebView webView;
     MediaRecorder miGrabacion;
     String outputFile=null;
-
+    String link[]={"https://www.youtube.com","","","","",""};
+    int i=0;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
        homeViewModel =
@@ -48,14 +49,16 @@ public class HomeFragment extends Fragment {
         this.webView = root.findViewById(R.id.wvWeb);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.youtube.com");
+        webView.loadUrl(link[i]);
+        i=i+1;
+        webView.getSettings().setJavaScriptEnabled(true);
         btnPlay.setOnClickListener(e ->reproduccir());
         btnRecord.setOnClickListener(e->grabar());
         btnStop.setOnClickListener(e->detener());
         return root;
     }
     public void grabar(){
-       outputFile= Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion.3gp";
+       outputFile= Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion2.3gp";
         miGrabacion = new MediaRecorder();
         miGrabacion.setAudioSource(MediaRecorder.AudioSource.MIC);
         miGrabacion.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
