@@ -40,10 +40,9 @@ public class Registro extends AppCompatActivity {
         progressBar=findViewById(R.id.progressBar);
         fauth=FirebaseAuth.getInstance();
         
-        if(fauth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
+        //if(fauth.getCurrentUser()!=null){
+            //startActivity(new Intent(getApplicationContext(), Login.class));
+        //}
 
         Registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,9 +69,9 @@ public class Registro extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Registro.this, "Usuario creado correctamente", Toast.LENGTH_SHORT);
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(Registro.this, Login.class));
                         }else{
-                            Toast.makeText(Registro.this, "Se produjo un error, usuario no creado"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(Registro.this, "Se produjo un error, usuario no creado", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }

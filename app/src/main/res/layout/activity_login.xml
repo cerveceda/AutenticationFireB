@@ -13,19 +13,20 @@
         android:layout_marginTop="192dp"
         android:ems="10"
         android:gravity="center"
+        android:inputType="textPassword"
         android:hint="Ingrese su contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/txtNomLog"
+        android:id="@+id/txtEmailLog"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Ingrese su Nombre"
+        android:hint="Ingrese su correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -54,4 +55,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtConLog"
         app:layout_constraintVertical_bias="0.247" />
+
+    <TextView
+        android:id="@+id/crearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="¿Nuevo por aquí? Crear cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crearCuenta" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
