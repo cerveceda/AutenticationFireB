@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ic_baseline_mic_24"
+            android:title="Grabacion" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:icon="@drawable/ic_baseline_music_video_24"
+            android:title="Karaokes" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_baseline_library_music_24"
+            android:title="Grabaciones" />
         <item
             android:id="@+id/mapsFragment"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="mapas" />
+            android:icon="@drawable/ic_baseline_map_24"
+            android:title="Ubicaciones" />
     </group>
 </menu>
